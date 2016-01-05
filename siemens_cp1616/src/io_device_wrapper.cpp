@@ -1,5 +1,5 @@
 /*********************************************************************************************//**
-* @file siemens_cp1616_io_device_wrapper.cpp
+* @file io_device_wrapper.cpp
 * 
 * ROS wrapper for cp1616 IO device mode
 * 
@@ -18,8 +18,8 @@
 *  limitations under the License.
    
 * *********************************************************************************************/
-#include <siemens_cp1616/siemens_cp1616_io_device.h>
-#include <siemens_cp1616/siemens_cp1616_io_device_callbacks.h>
+#include <siemens_cp1616/io_device.h>
+#include <siemens_cp1616/io_device_callbacks.h>
 
 #include <siemens_cp1616/set_alarm.h>
 #include <siemens_cp1616/reset_alarm.h>
