@@ -1,5 +1,5 @@
 /*********************************************************************************************//**
-* @file siemens_cp1616_io_device_callbacks.cpp
+* @file io_device_callbacks.cpp
 *
 * Callbacks required by IO Base library
 *
@@ -21,8 +21,8 @@
 #ifndef SIEMENS_CP1616_IO_DEVICE_CALLBACKS_CPP
 #define SIEMENS_CP1616_IO_DEVICE_CALLBACKS_CPP
 
-#include <siemens_cp1616/siemens_cp1616_io_device.h>
-#include <siemens_cp1616/siemens_cp1616_io_device_callbacks.h>
+#include <siemens_cp1616/io_device.h>
+#include <siemens_cp1616/io_device_callbacks.h>
 
 namespace siemens_cp1616
 {
@@ -443,4 +443,4 @@ namespace pnio_device_callbacks
 } //pnio_device_callbacks
 } //siemens_cp1616
 
-#endif //SIEMENS_CP1616_IO_DEVICE_CALLBACKS_CPP
+#endif //IO_DEVICE_CALLBACKS_CPP
