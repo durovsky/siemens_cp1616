@@ -1,7 +1,7 @@
 /*********************************************************************************************//**
-* @file siemens_cp1616_io_controller.cpp
+* @file io_controller.cpp
 * 
-* siemens_cp1616_io_controller class
+* io_controller class
 * 
 * Copyright {2015} {Frantisek Durovsky}
 * 
@@ -18,11 +18,11 @@
 *  limitations under the License.
    
 * *********************************************************************************************/
-#ifndef SIEMENS_CP1616_IO_CONTROLLER_CPP
-#define SIEMENS_CP1616_IO_CONTROLLER_CPP
+#ifndef IO_CONTROLLER_CPP
+#define IO_CONTROLLER_CPP
 
-#include <siemens_cp1616/siemens_cp1616_io_controller.h>
-#include <siemens_cp1616/siemens_cp1616_io_controller_callbacks.h>
+#include <siemens_cp1616/io_controller.h>
+#include <siemens_cp1616/io_controller_callbacks.h>
 
 namespace siemens_cp1616
 {
@@ -491,4 +491,4 @@ int Cp1616IOController::parseConfigFile(std::string filepath)
 
 } //siemens_cp1616
 
-#endif //SIEMENS_CP1616_IO_CONTROLLER_CPP
+#endif //IO_CONTROLLER_CPP
