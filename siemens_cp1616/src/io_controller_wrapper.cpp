@@ -1,5 +1,5 @@
 /*********************************************************************************************//**
-* @file siemens_cp1616_io_controller_wrapper.cpp
+* @file io_controller_wrapper.cpp
 * 
 * ROS wrapper for cp1616 IO Controller mode
 * 
@@ -18,8 +18,8 @@
 *  limitations under the License.
    
 * *********************************************************************************************/
-#include <siemens_cp1616/siemens_cp1616_io_controller.h>
-#include <siemens_cp1616/siemens_cp1616_io_controller_callbacks.h>
+#include <siemens_cp1616/io_controller.h>
+#include <siemens_cp1616/io_controller_callbacks.h>
 
 #include <std_msgs/UInt8MultiArray.h>
 #include <std_msgs/MultiArrayDimension.h>
