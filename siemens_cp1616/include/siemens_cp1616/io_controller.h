@@ -1,5 +1,5 @@
 /*********************************************************************************************//**
-* @file cp1616_io_controller.h
+* @file io_controller.h
 * 
 * cp1616_io_controller header 
 * 
@@ -18,8 +18,8 @@
 *  limitations under the License.
    
 * *********************************************************************************************/
-#ifndef SIEMENS_CP1616_IO_CONTROLLER_H
-#define SIEMENS_CP1616_IO_CONTROLLER_H
+#ifndef IO_CONTROLLER_H
+#define IO_CONTROLLER_H
 
 #include <ros/ros.h>
 #include <yaml-cpp/yaml.h>
@@ -191,4 +191,4 @@ private:
 }; //cp1616_io_controller class
 } //siemens_cp1616
 
-#endif //SIEMENS_CP1616_IO_CONTROLLER_H
+#endif //IO_CONTROLLER_H
