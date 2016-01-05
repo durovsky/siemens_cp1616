@@ -1,7 +1,7 @@
 /*********************************************************************************************//**
-* @file siemens_cp1616_io_device.cpp
+* @file io_device.cpp
 *
-* cp1616_io_device class
+* io_device class
 *
 * Copyright {2015} {Frantisek Durovsky}
 *
@@ -18,11 +18,11 @@
 *  limitations under the License.
 
 * *********************************************************************************************/
-#ifndef SIEMENS_CP1616_IO_DEVICE_CPP
-#define SIEMENS_CP1616_IO_DEVICE_CPP
+#ifndef IO_DEVICE_CPP
+#define IO_DEVICE_CPP
 
-#include <siemens_cp1616/siemens_cp1616_io_device.h>
-#include <siemens_cp1616/siemens_cp1616_io_device_callbacks.h>
+#include <siemens_cp1616/io_device.h>
+#include <siemens_cp1616/io_device_callbacks.h>
 
 namespace siemens_cp1616
 {
@@ -1099,4 +1099,4 @@ PNIO_UINT16 Cp1616IODevice::getCpArNumber()
 
 } //siemens_cp1616
 
-#endif //SIEMENS_CP1616_IO_DEVICE_CPP
+#endif //IO_DEVICE_CPP
