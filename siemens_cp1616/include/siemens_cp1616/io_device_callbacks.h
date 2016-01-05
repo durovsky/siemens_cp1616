@@ -1,5 +1,5 @@
 /*********************************************************************************************//**
-* @file cp1616_io_controller_callbacks.h
+* @file io_device_callbacks.h
 *
 * Callbacks declarations - required by existing IO Base library callback interface
 *
@@ -18,8 +18,8 @@
 *  limitations under the License.
 
 * *********************************************************************************************/
-#ifndef SIEMENS_CP1616_IO_DEVICE_CALLBACKS_H
-#define SIEMENS_CP1616_IO_DEVICE_CALLBACKS_H
+#ifndef IO_DEVICE_CALLBACKS_H
+#define IO_DEVICE_CALLBACKS_H
 
 namespace siemens_cp1616
 {
@@ -140,4 +140,4 @@ namespace pnio_device_callbacks
 } //pnio_device_callbacks
 } //siemens_cp1616
 
-#endif //SIEMENS_CP1616_IO_DEVICE_CALLBACKS_H
+#endif //IO_DEVICE_CALLBACKS_H
