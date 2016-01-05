@@ -1,5 +1,5 @@
 /*********************************************************************************************//**
-* @file siemens_cp1616_io_controller_callbacks.cpp
+* @file io_controller_callbacks.cpp
 *
 * Callbacks required by IO Base library
 *
@@ -18,10 +18,11 @@
 *  limitations under the License.
 
 * *********************************************************************************************/
-#ifndef SIEMENS_CP1616_IO_CONTROLLER_CALLBACKS_CPP
-#define SIEMENS_CP1616_IO_CONTROLLER_CALLBACKS_CPP
+#ifndef IO_CONTROLLER_CALLBACKS_CPP
+#define IO_CONTROLLER_CALLBACKS_CPP
 
-#include <siemens_cp1616/siemens_cp1616_io_controller.h>
+#include <siemens_cp1616/io_controller.h>
+#include <siemens_cp1616/io_controller_callbacks.h>
 
 namespace siemens_cp1616
 {
@@ -144,7 +145,7 @@ namespace pnio_controller_callbacks
   {
     ROS_WARN("CallbackForDsWriteConf should not occur within this implementation");
   }
-} //siemens_cp1616_io_controller_callbacks
+} //pnio_controller_callbacks
 } //siemens_cp1616
 
-#endif //SIEMENS_CP1616_IO_CONTROLLER_CALLBACKS_CPP
+#endif //IO_CONTROLLER_CALLBACKS_CPP
