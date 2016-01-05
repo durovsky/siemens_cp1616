@@ -1,7 +1,7 @@
 /*********************************************************************************************//**
-* @file cp1616_io_device.h
+* @file io_device.h
 *
-* Main cp1616_io_device node
+* Main io_device node
 *
 * Copyright {2015} {Frantisek Durovsky}
 *
@@ -18,8 +18,8 @@
 *  limitations under the License.
 
 * *********************************************************************************************/
-#ifndef SIEMENS_CP1616_IO_DEVICE_H
-#define SIEMENS_CP1616_IO_DEVICE_H
+#ifndef IO_DEVICE_H
+#define IO_DEVICE_H
 
 //CP 1616 Annotations
 #define ANNOT_NAME       "StarterKit"      // device type (String 25) 
@@ -256,4 +256,4 @@ private:
 }  //siemens_cp1616
 
 
-#endif //SIEMENS_CP1616_IO_DEVICE_H
+#endif //IO_DEVICE_H
