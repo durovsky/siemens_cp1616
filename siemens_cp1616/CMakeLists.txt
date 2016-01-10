@@ -8,7 +8,31 @@ find_package(catkin REQUIRED
     std_msgs
 )
 
-include_directories(include ${catkin_INCLUDE_DIRS})
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(yaml_cpp REQUIRED yaml-cpp)
+if(NOT ${yaml_cpp_VERSION} VERSION_LESS "0.5")
+  add_definitions(-DHAVE_NEW_YAMLCPP)
+endif()
+
+find_path(
+  yaml_cpp_INCLUDE_DIR
+  # bit of a trick
+  NAMES yaml-cpp/yaml.h
+  PATHS ${yaml_cpp_INCLUDE_DIRS}
+)
+
+find_library(
+  yaml_cpp_LIBRARY
+  NAMES ${yaml_cpp_LIBRARIES}
+  PATHS ${yaml_cpp_LIBRARY_DIRS}
+)
+
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+  ${yaml_cpp_INCLUDE_DIR}
+)
+
 
 add_service_files(
   FILES
@@ -40,7 +64,7 @@ add_library(
   src/io_device.cpp
   src/io_device_callbacks.cpp
 )
-target_link_libraries(${PROJECT_NAME} yaml-cpp)
+target_link_libraries(${PROJECT_NAME} ${yaml_cpp_LIBRARY})
 
 #IO Controller wrapper
 add_executable(
