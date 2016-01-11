@@ -772,7 +772,9 @@ int Cp1616IODevice::doAfterIndataIndCbf()
 int Cp1616IODevice::parseConfigFile(std::string filepath)
 {
   PNIO_UINT32 error_code = PNIO_OK;  
-   
+
+//NEW API
+#ifdef HAVE_NEW_YAMLCPP  
   try
   {
     YAML::Node config = YAML::LoadFile(filepath);
@@ -828,6 +830,57 @@ int Cp1616IODevice::parseConfigFile(std::string filepath)
     error_code = PNIO_ERR_NO_CONFIG;
   }
   return (int)error_code;
+
+#else
+  //OLD API  
+  std::ifstream fin(filepath.c_str());
+  
+  if(fin.is_open())
+  {
+    YAML::Parser parser(fin);
+    YAML::Node doc;
+   
+    try
+    {
+      parser.GetNextDocument(doc);
+      for(unsigned i = 0; i < doc.size(); i++)
+      {
+        DeviceModuleData temp_module;
+        doc[i] >> temp_module; 
+     
+        //Fixed params
+        temp_module.subslot = 1;
+        temp_module.api = 0;
+        temp_module.maxSubslots = 0;
+        temp_module.modState = 0;
+        temp_module.subState = 0;
+        temp_module.dir = 0;
+ 
+        if(temp_module.size > NUMOF_BYTES_PER_SLOT)
+          ROS_ERROR("CP1616 Configuration: Max data length: %d exceeded", NUMOF_BYTES_PER_SLOT);
+        else
+          modules_.push_back(temp_module);	
+      }
+      
+      if(!modules_.size())
+        ROS_ERROR("CP1616 Configuration: No module found! Check configuration!");
+      else
+        ROS_INFO_STREAM("CP1616 Configuration: Number of modules: " << modules_.size() );
+    }
+    catch(YAML::ParserException &e)
+    {
+      ROS_ERROR("Error reading yaml config file");
+      error_code = PNIO_ERR_NO_CONFIG;
+    }
+  }
+  else
+  {
+    ROS_ERROR("Error openning yaml config file");
+  }
+  return (int)error_code;
+
+#endif  //HAVE_NEW_YAMLCPP
+  
 }
 
 int Cp1616IODevice::sendDiagnosticAlarm(PNIO_UINT16 slot_num)
@@ -1100,4 +1153,3 @@ PNIO_UINT16 Cp1616IODevice::getCpArNumber()
 } //siemens_cp1616
 
 #endif //IO_DEVICE_CPP
-
